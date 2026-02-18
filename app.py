@@ -228,7 +228,7 @@ def load_resources():
         with open('stress_model.pkl', 'rb') as f:
             model = pickle.load(f)
         # Load sample data (simulating a 5-minute session at 1 Hz)
-        df = pd.read_csv('train.csv').sample(300, random_state=42).reset_index(drop=True)
+        df = pd.read_csv('sample_data.csv').reset_index(drop=True)
         return model, df
     except FileNotFoundError as e:
         st.error(f"❌ Required file not found: {e.filename}")
